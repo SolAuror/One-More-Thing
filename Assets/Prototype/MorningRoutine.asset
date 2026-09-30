@@ -1,0 +1,337 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 501168f9e33c4fadb9a6b8ae2f5bf759, type: 3}
+  m_Name: MorningRoutine
+  m_EditorClassIdentifier: Assembly-CSharp::OneMoreThing.RoutineDefinition
+  duration: 300
+  visibleThoughts: 3
+  tasks:
+  - id: keys
+    title: Collect keys
+    thought: Keys. I need my keys.
+    required: 1
+    repeatable: 0
+    seconds: 0.25
+    completionTimeCost: 2
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 1
+    reveals: []
+  - id: phone
+    title: Collect phone
+    thought: Don't leave without my phone.
+    required: 1
+    repeatable: 0
+    seconds: 0.25
+    completionTimeCost: 2
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 1
+    reveals: []
+  - id: bag
+    title: Pack bag
+    thought: Finish packing my bag.
+    required: 1
+    repeatable: 0
+    seconds: 1.25
+    completionTimeCost: 18
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 1
+    reveals: []
+  - id: message
+    title: Reply to Alex
+    thought: Alex messaged about a plant that needs water.
+    required: 0
+    repeatable: 0
+    seconds: 0.8
+    completionTimeCost: 28
+    prerequisites:
+    - phone
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 1
+    waitForNotification: 1
+    showInSummary: 1
+    reveals:
+    - plant
+  - id: cup
+    title: Wash all dishes
+    thought: A clear sink would be a nice thing to leave behind.
+    required: 0
+    repeatable: 0
+    seconds: 2.2
+    completionTimeCost: 20
+    prerequisites:
+    - dish_living
+    - dish_bedroom
+    - dish_dining_1
+    - dish_dining_2
+    - dish_dining_3
+    - dish_dining_4
+    - dish_dining_5
+    - dish_dining_6
+    prerequisiteHint: Gather the dishes from the living room, bedroom and each place
+      at the dining table
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 1
+    reveals:
+    - plant
+  - id: laundry
+    title: Start the washer
+    thought: Someone else will need a clean towel later.
+    required: 0
+    repeatable: 0
+    seconds: 1.1
+    completionTimeCost: 35
+    prerequisites:
+    - laundry_downstairs
+    - laundry_upstairs
+    prerequisiteHint: Collect laundry from both bathrooms
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 1
+    reveals: []
+  - id: plant
+    title: Water the plant
+    thought: Which one did Alex mention?
+    required: 0
+    repeatable: 0
+    seconds: 0.6
+    completionTimeCost: 16
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 1
+    reveals: []
+  - id: books
+    title: Straighten the books
+    thought: Those books were standing a moment ago.
+    required: 0
+    repeatable: 1
+    seconds: 0.8
+    completionTimeCost: 24
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 1
+    reveals: []
+  - id: laundry_downstairs
+    title: Collect downstairs bathroom laundry
+    thought: The bathroom floor isn't really a laundry basket.
+    required: 0
+    repeatable: 0
+    seconds: 0.35
+    completionTimeCost: 2
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 0
+    reveals:
+    - laundry
+  - id: laundry_upstairs
+    title: Collect upstairs bathroom laundry
+    thought: Another towel. Of course.
+    required: 0
+    repeatable: 0
+    seconds: 0.35
+    completionTimeCost: 2
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 0
+    reveals:
+    - laundry
+  - id: dish_living
+    title: Collect living room dishes
+    thought: This mug has travelled quite far from the kitchen.
+    required: 0
+    repeatable: 0
+    seconds: 0.35
+    completionTimeCost: 2
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 0
+    reveals:
+    - cup
+  - id: dish_bedroom
+    title: Collect bedroom dishes
+    thought: That mug definitely belongs downstairs.
+    required: 0
+    repeatable: 0
+    seconds: 0.35
+    completionTimeCost: 2
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 0
+    reveals:
+    - cup
+  - id: email
+    title: Check morning emails
+    thought: Alex left me a note in the inbox.
+    required: 0
+    repeatable: 0
+    seconds: 0.7
+    completionTimeCost: 15
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 1
+    waitForNotification: 0
+    showInSummary: 1
+    reveals:
+    - plant
+  - id: message_plans
+    title: Reply about tonight
+    thought: What time are we meeting tonight?
+    required: 0
+    repeatable: 0
+    seconds: 0.65
+    completionTimeCost: 18
+    prerequisites:
+    - phone
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 1
+    waitForNotification: 1
+    showInSummary: 1
+    reveals: []
+  - id: message_photo
+    title: Reply to the cat photo
+    thought: There's another cat photo in the chat.
+    required: 0
+    repeatable: 0
+    seconds: 0.65
+    completionTimeCost: 22
+    prerequisites:
+    - phone
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 1
+    waitForNotification: 1
+    showInSummary: 1
+    reveals: []
+  - id: dish_dining_1
+    title: Collect dining cup
+    thought: This belongs by the sink.
+    required: 0
+    repeatable: 0
+    seconds: 0.35
+    completionTimeCost: 2
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 0
+    reveals:
+    - cup
+  - id: dish_dining_2
+    title: Collect dining coffee
+    thought: This belongs by the sink.
+    required: 0
+    repeatable: 0
+    seconds: 0.35
+    completionTimeCost: 2
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 0
+    reveals:
+    - cup
+  - id: dish_dining_3
+    title: Collect dining fork
+    thought: This belongs by the sink.
+    required: 0
+    repeatable: 0
+    seconds: 0.35
+    completionTimeCost: 2
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 0
+    reveals:
+    - cup
+  - id: dish_dining_4
+    title: Collect dining fork
+    thought: This belongs by the sink.
+    required: 0
+    repeatable: 0
+    seconds: 0.35
+    completionTimeCost: 2
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 0
+    reveals:
+    - cup
+  - id: dish_dining_5
+    title: Collect dining plate
+    thought: This belongs by the sink.
+    required: 0
+    repeatable: 0
+    seconds: 0.35
+    completionTimeCost: 2
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 0
+    reveals:
+    - cup
+  - id: dish_dining_6
+    title: Collect dining plate
+    thought: This belongs by the sink.
+    required: 0
+    repeatable: 0
+    seconds: 0.35
+    completionTimeCost: 2
+    prerequisites: []
+    prerequisiteHint: Complete the earlier steps
+    deviceOnly: 0
+    waitForNotification: 0
+    showInSummary: 0
+    reveals:
+    - cup
+  cues: []
+  phoneMessages:
+  - taskId: message
+    sender: Alex
+    body: Please water the plant in my email. Thanks!
+    afterPickupSeconds: 10
+  - taskId: message_plans
+    sender: Group chat
+    body: 'Still on for tonight?
+
+      I''ll cook if there''s a little room in the
+      kitchen.'
+    afterPickupSeconds: 35
+  - taskId: message_photo
+    sender: Sam
+    body: 'Miso tried to use the books as stairs again.
+
+      I should probably
+      apologise to the shelf.'
+    afterPickupSeconds: 65
